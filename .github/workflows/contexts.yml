@@ -8,11 +8,17 @@ on:
        debug:
          type: string
          default: false
+env: 
+  MY_WF_VAR: 'workflow'
+  MY_OVERWRITTEN_VAR: 'workflow'
 
 jobs:
   echo-data:
     runs-on: ubuntu-latest
-    steps:
+    env:
+      MY_JOB_VAR: 'job'
+      MY_OVERWRITTEN_VAR: 'job'
+    steps: 
       - name: Display info
         run: |
           echo "Actor: ${{ github.actor }}"
@@ -24,4 +30,15 @@ jobs:
       - name: Retreive var
         run: |
           echo "Varible value: ${{ vars.MY_VAR }}"
-    
+          
+      - name: Print env var
+        env: 
+          MY_OVERWRITTEN_VAR: 'step'
+        run: |
+          echo "Workflow env: ${{ env.MY_WF_VAR }}"
+          echo " Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
+          
+      - name: Print env var
+        run: |
+          echo "Workflow env: ${{ env.MY_WF_VAR }}"
+          echo " Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
