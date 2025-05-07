@@ -1,5 +1,5 @@
 name: passing output b/w jobs
-on: push
+on: [workflow_dispatch]
 
 jobs:
   job1:
