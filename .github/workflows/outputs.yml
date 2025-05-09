@@ -14,3 +14,10 @@ jobs:
     needs: [welcome]
     steps:
       - run: echo "Bye, ${{ needs.welcome.outputs.name }}"
+
+  step2:
+    runs-on: ubuntu-latest
+    needs: welcome
+    steps:
+      - name: to test o/p from wlcm job
+        run: echo "the name from wlcm job is = ${{ needs.welcome.outputs.name }}"
