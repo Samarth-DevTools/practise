@@ -7,7 +7,7 @@ jobs:
       name: ${{ steps.step1.outputs.NAME }}
     steps:
       - id: step1
-        run: echo "NAME:Virat" >> "$GITHUB_OUTPUT"
+        run: echo "NAME=Virat" >> "$GITHUB_OUTPUT"
 
   goodbye:
     runs-on: ubuntu-latest
