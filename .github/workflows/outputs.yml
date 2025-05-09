@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: step1
-        run: echo "name:Virat" >> "$GITHUB_OUTPUT"
+        run: echo "NAME:Virat" >> "$GITHUB_OUTPUT"
 
   goodbye:
     runs-on: ubuntu-latest
