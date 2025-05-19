@@ -13,3 +13,5 @@ jobs:
 
       - name: Greet user
         uses: ./.github/custom-action/greet-action
+        with:
+          name: Samarth
