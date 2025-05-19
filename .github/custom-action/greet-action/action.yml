@@ -1,8 +1,13 @@
 name: Greeting the user
 description: custom action to greet the user
+inputs: 
+  name:
+    description: Name of the user
+    required: true
+    
 runs: 
   using: "composite"
   steps:
     - name: Welcome user
-      run: echo "Hello user..!"
+      run: echo "Hello ${{ inputs.name }}..!, Welcome to github actions"
       shell: bash
