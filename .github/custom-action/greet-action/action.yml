@@ -5,3 +5,4 @@ runs:
   steps:
     - name: Welcome user
       run: echo "Hello user..!"
+      shell: bash
