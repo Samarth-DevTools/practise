@@ -1,0 +1,7 @@
+name: Greeting the user
+description: custom action to greet the user
+runs: 
+  using: "composite"
+  steps:
+    - name: Print Hello World
+      run: echo "Hello, world! This is a simple workflow."
